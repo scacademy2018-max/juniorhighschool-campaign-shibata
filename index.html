@@ -1,194 +1,1338 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>受験戦略ガイド</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>300点から400点へ。定期テスト100点アップ4週間プロジェクト｜SCアカデミー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0d0d0b;
+  --white:#fafaf7;
+  --cream:#f4f2ec;
+  --cream2:#eceae2;
+  --red:#c53020;
+  --red-dark:#9e2418;
+  --red-pale:#f2eae8;
+  --ink:#191917;
+  --muted:#6a6a66;
+  --light:#b0aea8;
+  --border:#dedad2;
+  --gold:#9a7420;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--white);color:var(--ink);line-height:1.75;overflow-x:hidden;font-size:16px}
 
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
-        "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-      text-align: center;
-    }
+/* ──────── UTILITIES ──────── */
+.label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:14px}
+.label-w{color:rgba(255,255,255,.45)}
+.h1{font-size:clamp(32px,6vw,60px);font-weight:900;line-height:1.2;letter-spacing:-.01em}
+.h2{font-size:clamp(26px,4.5vw,44px);font-weight:900;line-height:1.25;letter-spacing:-.01em}
+.h3{font-size:clamp(18px,2.5vw,24px);font-weight:700;line-height:1.35}
+.lead{font-size:clamp(15px,2vw,18px);line-height:1.9;color:var(--muted)}
+.lead-w{color:rgba(255,255,255,.6)}
+em{font-style:normal;color:var(--red)}
+.sec{padding:96px 40px}
+.sec-inner{max-width:980px;margin:0 auto}
+.divbar{width:40px;height:3px;background:var(--red);margin-bottom:32px}
+.divbar-sm{width:24px;height:2px;background:var(--red);margin-bottom:20px}
+.tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;background:var(--red);color:#fff}
+.tag-out{background:transparent;border:1px solid var(--red);color:var(--red)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;background:var(--border)}
+.card{background:var(--white);padding:36px 28px}
+.card-dark{background:#161614;padding:36px 28px}
 
-    .viewer {
-      max-width: 700px;
-      margin: 0 auto;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 12px 12px 24px;
-    }
+/* ──────── NAVBAR ──────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;color:#fff;text-decoration:none}
+.nav-logo span{color:var(--red)}
+.nav-cta{background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;padding:8px 20px;text-decoration:none;transition:background .15s}
+.nav-cta:hover{background:var(--red-dark)}
 
-    .book-area {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      border-radius: 12px;
-      background: #111;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
-      touch-action: pan-y;
-    }
+/* ──────── HERO ──────── */
+.hero{background:var(--black);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:56px}
+.hero-lines{position:absolute;inset:0;pointer-events:none}
+.hero-lines::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(197,48,32,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(197,48,32,.07) 1px,transparent 1px);background-size:72px 72px;animation:grid 24s linear infinite}
+.hero-lines::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(transparent,var(--black))}
+@keyframes grid{0%{transform:translate(0,0)}100%{transform:translate(72px,72px)}}
+.hero-bg-num{position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(180px,32vw,380px);line-height:1;color:rgba(255,255,255,.035);letter-spacing:-.04em;pointer-events:none;user-select:none;white-space:nowrap}
+.hero-inner{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:80px 40px}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(197,48,32,.6);padding:8px 18px;margin-bottom:48px;animation:fadeup .7s ease both}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-badge-text{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.hero-score-row{display:flex;align-items:baseline;gap:16px;margin-bottom:12px;animation:fadeup .7s .08s ease both}
+.score-from{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,12vw,120px);line-height:1;color:rgba(255,255,255,.35);letter-spacing:-.02em}
+.score-arrow{font-size:clamp(28px,5vw,52px);color:var(--red);line-height:1}
+.score-to{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,12vw,120px);line-height:1;color:#fff;letter-spacing:-.02em}
+.score-suffix{font-size:clamp(20px,3vw,36px);color:rgba(255,255,255,.5);font-weight:700;margin-left:4px}
+.hero-title{font-size:clamp(22px,3.5vw,36px);font-weight:900;color:#fff;margin-bottom:24px;line-height:1.4;animation:fadeup .7s .15s ease both}
+.hero-sub{font-size:clamp(14px,1.8vw,17px);color:rgba(255,255,255,.5);max-width:600px;margin-bottom:48px;animation:fadeup .7s .22s ease both;line-height:1.85}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;animation:fadeup .7s .3s ease both}
+.btn-primary{background:var(--red);color:#fff;font-size:15px;font-weight:700;padding:16px 44px;text-decoration:none;letter-spacing:.04em;transition:background .15s,transform .12s;display:inline-block}
+.btn-primary:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-primary::after{content:' →';opacity:.7}
+.btn-ghost{border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);font-size:14px;font-weight:500;padding:16px 32px;text-decoration:none;letter-spacing:.04em;transition:border-color .15s,color .15s;display:inline-block}
+.btn-ghost:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeup .7s .45s ease both}
+.hero-scroll-line{width:1px;height:48px;background:rgba(255,255,255,.15);position:relative;overflow:hidden}
+.hero-scroll-line::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:rgba(255,255,255,.5);animation:scrolldown 2s ease infinite}
+@keyframes scrolldown{0%{top:-100%}100%{top:200%}}
+.hero-scroll-text{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+@keyframes fadeup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-    .book-area img {
-      width: 100%;
-      display: block;
-      border-radius: 12px;
-      user-select: none;
-      -webkit-user-drag: none;
-      pointer-events: none;
-    }
+/* ──────── PROBLEM / INTRO ──────── */
+.intro-sec{background:var(--cream);padding:96px 40px}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.intro-sticky{position:sticky;top:80px}
+.problem-list{list-style:none;margin-top:32px}
+.problem-list li{padding:16px 0;border-bottom:1px solid var(--border);font-size:15px;display:flex;align-items:flex-start;gap:14px;line-height:1.6}
+.problem-list li::before{content:'';width:20px;height:20px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center}
+.problem-list li span{color:var(--muted)}
+.insight-box{background:var(--white);border-left:3px solid var(--red);padding:28px 28px 28px 32px;margin-top:40px}
+.insight-box p{font-size:17px;font-weight:700;line-height:1.65}
+.insight-box .sub{font-size:14px;color:var(--muted);font-weight:400;margin-top:8px}
 
-    .page-info {
-      margin-top: 12px;
-      font-size: 14px;
-      color: #ddd;
-      letter-spacing: 0.03em;
-    }
+/* ──────── SCORE TABLE ──────── */
+.score-sec{background:var(--white);padding:96px 40px}
+.score-table-wrap{margin-top:48px;border:1px solid var(--border)}
+.score-th{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;background:var(--black);color:#fff;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:14px 24px}
+.score-th span{text-align:right}
+.score-th span:first-child{text-align:left}
+.score-tr{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:18px 24px;border-bottom:1px solid var(--border);align-items:center;transition:background .12s}
+.score-tr:hover{background:var(--red-pale)}
+.score-tr:last-of-type{border-bottom:none}
+.score-sub{font-weight:700;font-size:16px;display:flex;align-items:center;gap:12px}
+.s-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0}
+.score-now{text-align:right;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:var(--muted)}
+.score-target{text-align:right;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:var(--red)}
+.score-diff{text-align:right;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--gold);background:#faf6ee;padding:3px 10px;border-radius:2px;display:inline-block}
+.score-foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;background:var(--black);color:#fff;padding:20px 24px;align-items:center}
+.score-foot-label{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#666}
+.score-foot-now{text-align:right;font-family:'Bebas Neue',sans-serif;font-size:36px;color:rgba(255,255,255,.35);letter-spacing:-.01em}
+.score-foot-target{text-align:right;font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--red);letter-spacing:-.01em}
+.score-foot-diff{text-align:right;font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--gold);letter-spacing:-.01em}
+.score-note{margin-top:20px;font-size:14px;color:var(--muted);line-height:1.8;max-width:640px}
 
-    .controls {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 14px;
-      flex-wrap: wrap;
-    }
+/* ──────── COMMON MISTAKES ──────── */
+.mistakes-sec{background:var(--black);padding:96px 40px}
+.mistakes-sec .h2{color:#fff}
+.mistakes-sec .lead{color:rgba(255,255,255,.45)}
+.mistakes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#1a1a18;margin-top:56px}
+.mistake-card{background:#111110;padding:40px 30px;position:relative;overflow:hidden}
+.mistake-card::before{content:attr(data-n);position:absolute;right:20px;top:0;font-family:'Bebas Neue',sans-serif;font-size:100px;line-height:1;color:rgba(255,255,255,.04);pointer-events:none}
+.m-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(197,48,32,.5);color:var(--red);margin-bottom:20px}
+.mistake-card .h3{color:#fff;margin-bottom:14px;font-size:17px}
+.mistake-card p{font-size:14px;color:rgba(255,255,255,.4);line-height:1.85}
+.mistake-card .wrong-right{margin-top:24px}
+.wr-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px}
+.wr-label.wrong{color:rgba(197,48,32,.7)}
+.wr-label.right{color:#5a9a3a}
+.wr-list{list-style:none;margin-bottom:20px}
+.wr-list li{font-size:13px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05);color:rgba(255,255,255,.35);padding-left:16px;position:relative;line-height:1.5}
+.wr-list.right-list li{color:rgba(255,255,255,.75);font-weight:500}
+.wr-list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:1px}
+.wr-list.wrong-list li::before{background:rgba(197,48,32,.6)}
+.wr-list.right-list li::before{background:#5a9a3a}
 
-    button {
-      appearance: none;
-      border: none;
-      border-radius: 999px;
-      padding: 12px 18px;
-      min-width: 120px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      background: #ff7a00;
-      color: #fff;
-    }
+/* ──────── WEEKS ──────── */
+.weeks-sec{background:var(--cream);padding:96px 40px}
+.week-tabs{display:flex;gap:2px;background:var(--border);margin-top:48px;margin-bottom:2px}
+.week-tab{flex:1;padding:14px 8px;background:var(--white);text-align:center;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:background .12s,color .12s;border:none;outline:none}
+.week-tab.active{background:var(--black);color:#fff}
+.week-tab:hover:not(.active){background:var(--cream2)}
+.week-panels{background:var(--border)}
+.week-panel{display:none;background:var(--white);padding:0}
+.week-panel.active{display:block}
+.wp-header{background:var(--black);padding:40px 48px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start}
+.wp-num{font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:1;color:var(--red);letter-spacing:-.02em}
+.wp-header-text{}
+.wp-period{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:8px}
+.wp-title{font-size:clamp(20px,3vw,28px);font-weight:900;color:#fff;margin-bottom:12px}
+.wp-desc{font-size:15px;color:rgba(255,255,255,.45);line-height:1.8}
+.wp-body{padding:48px}
+.wp-steps{display:flex;flex-direction:column;gap:2px;background:var(--border)}
+.step-item{background:var(--white);display:grid;grid-template-columns:64px 1fr;min-height:80px}
+.step-num-col{background:var(--cream);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--muted);flex-direction:column;gap:2px}
+.step-n{font-family:'Bebas Neue',sans-serif;font-size:28px;line-height:1;color:var(--red)}
+.step-content{padding:24px 28px}
+.step-head{font-size:16px;font-weight:700;margin-bottom:8px}
+.step-body{font-size:14px;color:var(--muted);line-height:1.8}
+.step-sub-list{list-style:none;margin-top:12px}
+.step-sub-list li{font-size:13px;color:var(--muted);padding:5px 0;padding-left:16px;position:relative;border-bottom:1px solid var(--border);line-height:1.5}
+.step-sub-list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:1px;background:var(--red)}
+.step-sub-list li:last-child{border-bottom:none}
+.wp-goal{background:var(--black);padding:28px 48px;display:flex;align-items:center;gap:24px}
+.goal-icon{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);flex-shrink:0}
+.goal-text{font-size:15px;font-weight:700;color:#fff}
 
-    button:disabled {
-      background: #555;
-      color: #aaa;
-      cursor: not-allowed;
-    }
+/* ──────── SUBJECTS ──────── */
+.subjects-sec{background:var(--white);padding:96px 40px}
+.subjects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;background:var(--border);margin-top:56px}
+.subj-card{background:var(--white);padding:36px 28px;position:relative}
+.subj-abbr{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--red);line-height:1;margin-bottom:6px;letter-spacing:-.02em;opacity:.9}
+.subj-name{font-size:19px;font-weight:900;margin-bottom:8px}
+.subj-em{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.subj-points{list-style:none}
+.subj-points li{font-size:14px;padding:8px 0;border-bottom:1px solid var(--border);padding-left:18px;position:relative;line-height:1.55;color:var(--ink)}
+.subj-points li:last-child{border-bottom:none}
+.subj-points li::before{content:'';position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;background:var(--red);opacity:.4}
+.subj-key{display:inline-block;margin-top:16px;font-size:12px;font-weight:700;color:var(--red);border:1px solid var(--red);padding:5px 12px;letter-spacing:.05em}
 
-    .hint {
-      margin-top: 10px;
-      font-size: 12px;
-      color: #999;
-    }
+/* ──────── MARK TABLE ──────── */
+.mark-sec{background:var(--cream);padding:96px 40px}
+.mark-table{width:100%;border-collapse:collapse;margin-top:40px}
+.mark-table th{background:var(--black);color:#fff;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:14px 20px;text-align:left}
+.mark-table td{padding:16px 20px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.6;vertical-align:top}
+.mark-table tr:hover td{background:var(--red-pale)}
+.mark-badge{display:inline-block;font-size:18px;font-weight:900;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal}
+.mark-badge.tri{background:#fff3e0;color:#d4700a}
+.mark-badge.x{background:#fce8e6;color:var(--red)}
+.mark-badge.star{background:#fff8e1;color:#9a7420}
+.mark-meaning{font-weight:700;font-size:15px;margin-bottom:4px}
+.mark-next{font-size:13px;color:var(--muted)}
 
-    .swipe-indicator {
-      position: absolute;
-      left: 50%;
-      bottom: 10px;
-      transform: translateX(-50%);
-      font-size: 12px;
-      color: rgba(255,255,255,0.7);
-      background: rgba(0,0,0,0.35);
-      padding: 6px 10px;
-      border-radius: 999px;
-      pointer-events: none;
-    }
+/* ──────── REDO NOTE ──────── */
+.redo-sec{background:var(--white);padding:96px 40px}
+.redo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:48px}
+.redo-col{background:var(--white);padding:40px 32px}
+.redo-step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--border)}
+.redo-step:last-child{border-bottom:none}
+.redo-n{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--red);line-height:1;flex-shrink:0;width:32px}
+.redo-text h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.redo-text p{font-size:13px;color:var(--muted);line-height:1.7}
+.redo-example{background:var(--cream);padding:40px 32px}
+.example-title{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.example-cards{display:flex;flex-direction:column;gap:2px}
+.ex-card{background:var(--white);padding:18px 20px}
+.ex-subj{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.ex-row{display:flex;gap:8px;margin-bottom:5px;font-size:13px;line-height:1.5}
+.ex-label{font-weight:700;color:var(--muted);flex-shrink:0;width:40px}
+.ex-val{color:var(--ink)}
 
-    @media (max-width: 480px) {
-      .viewer {
-        padding: 8px 8px 20px;
-      }
+/* ──────── STUMBLE ──────── */
+.stumble-sec{background:var(--black);padding:96px 40px}
+.stumble-sec .h2{color:#fff}
+.stumble-sec .lead{color:rgba(255,255,255,.45)}
+.stumble-items{margin-top:56px;display:flex;flex-direction:column;gap:2px;background:rgba(255,255,255,.04)}
+.stumble-item{background:#111110;display:grid;grid-template-columns:80px 1fr;min-height:80px}
+.stumble-n-col{background:#0d0d0b;display:flex;align-items:center;justify-content:center}
+.stumble-n{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--red);line-height:1}
+.stumble-content{padding:28px 32px}
+.stumble-content h3{color:#fff;font-size:18px;font-weight:700;margin-bottom:10px}
+.stumble-content p{font-size:14px;color:rgba(255,255,255,.4);line-height:1.85}
+.stumble-content .hi{color:rgba(255,255,255,.75);font-weight:500}
 
-      button {
-        flex: 1 1 0;
-        min-width: 0;
-      }
-    }
-  </style>
+/* ──────── ABOUT SC ──────── */
+.about-sec{background:var(--cream);padding:96px 40px}
+.about-lead{font-size:clamp(16px,2.2vw,20px);font-weight:500;line-height:1.85;max-width:680px;margin-bottom:56px}
+.about-services{display:flex;flex-direction:column;gap:2px;background:var(--border)}
+.svc-item{background:var(--white);display:grid;grid-template-columns:60px 1fr;min-height:80px}
+.svc-n-col{background:var(--black);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px}
+.svc-n{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--red);line-height:1}
+.svc-n-label{font-family:'Montserrat',sans-serif;font-size:7px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase}
+.svc-content{padding:24px 32px}
+.svc-head{font-size:17px;font-weight:700;margin-bottom:8px}
+.svc-body{font-size:14px;color:var(--muted);line-height:1.8}
+.svc-detail{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.svc-chip{font-size:11px;font-weight:500;background:var(--cream);border:1px solid var(--border);padding:4px 10px;color:var(--muted)}
+
+/* ──────── SELF vs JUKU ──────── */
+.compare-sec{background:var(--white);padding:96px 40px}
+.compare-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:48px}
+.compare-col{padding:40px 36px}
+.compare-col.self{background:var(--cream)}
+.compare-col.juku{background:var(--black)}
+.compare-header{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid}
+.compare-col.self .compare-header{border-color:var(--border)}
+.compare-col.juku .compare-header{border-color:rgba(255,255,255,.08)}
+.c-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.c-icon.self-icon{background:rgba(0,0,0,.06);color:var(--ink)}
+.c-icon.juku-icon{background:rgba(197,48,32,.15);color:var(--red);font-size:14px;font-weight:700;font-family:'Montserrat',sans-serif;letter-spacing:.02em}
+.c-label{font-size:14px;font-weight:700}
+.compare-col.self .c-label{color:var(--ink)}
+.compare-col.juku .c-label{color:#fff}
+.c-list{list-style:none}
+.c-list li{padding:11px 0;border-bottom:1px solid;font-size:14px;padding-left:18px;position:relative;line-height:1.55}
+.compare-col.self .c-list{border-color:var(--border)}
+.compare-col.juku .c-list li{border-color:rgba(255,255,255,.06)}
+.compare-col.self .c-list li{color:var(--muted)}
+.compare-col.juku .c-list li{color:rgba(255,255,255,.8);font-weight:500}
+.c-list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:7px;height:1px}
+.compare-col.self .c-list li::before{background:var(--muted)}
+.compare-col.juku .c-list li::before{background:var(--red)}
+.c-list li:last-child{border-bottom:none}
+
+/* ──────── CHECKLIST ──────── */
+.check-sec{background:var(--cream);padding:96px 40px}
+.check-intro{font-size:15px;color:var(--muted);margin-bottom:40px;line-height:1.8}
+.check-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:10px}
+.check-item{background:var(--white);border:1px solid var(--border);padding:18px 20px;display:flex;align-items:flex-start;gap:14px;cursor:pointer;transition:border-color .12s,transform .12s}
+.check-item:hover{border-color:var(--red);transform:translateX(4px)}
+.cb{width:22px;height:22px;border:2px solid var(--border);flex-shrink:0;margin-top:1px;transition:all .12s;display:flex;align-items:center;justify-content:center}
+.check-item:hover .cb{border-color:var(--red)}
+.cb-text{font-size:14px;line-height:1.6;color:var(--ink);transition:color .12s}
+.check-result{margin-top:32px;background:var(--white);border:1px solid var(--border);padding:24px 28px;display:flex;align-items:center;gap:20px}
+.cr-count{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1;color:var(--red);letter-spacing:-.02em;flex-shrink:0;min-width:64px}
+.cr-text{font-size:14px;line-height:1.75;color:var(--muted)}
+.cr-text strong{color:var(--ink)}
+
+/* ──────── CTA FINAL ──────── */
+.cta-sec{background:var(--black);padding:120px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-bg{position:absolute;inset:0;pointer-events:none}
+.cta-bg::before{content:'300→400';font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,18vw,200px);color:rgba(255,255,255,.025);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;letter-spacing:-.02em}
+.cta-inner{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.cta-sec .h2{color:#fff;margin-bottom:24px}
+.cta-sec .lead{color:rgba(255,255,255,.45);margin-bottom:12px}
+.cta-school-name{font-size:13px;color:rgba(255,255,255,.25);letter-spacing:.1em;margin-bottom:56px}
+.cta-boxes{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.05);margin-bottom:40px;text-align:left}
+.cta-box{background:#111110;padding:28px 24px}
+.cta-box-head{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.cta-box-list{list-style:none}
+.cta-box-list li{font-size:13px;color:rgba(255,255,255,.6);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);padding-left:14px;position:relative;line-height:1.5}
+.cta-box-list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:5px;height:1px;background:var(--red)}
+.cta-box-list li:last-child{border-bottom:none}
+.cta-btn-wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
+.cta-btn{display:inline-block;background:var(--red);color:#fff;font-size:17px;font-weight:700;padding:20px 64px;text-decoration:none;letter-spacing:.06em;transition:background .15s,transform .12s}
+.cta-btn:hover{background:var(--red-dark);transform:translateY(-2px)}
+.cta-note{font-size:13px;color:rgba(255,255,255,.3)}
+.cta-free{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.4);padding:8px 20px;margin-top:4px}
+
+/* ──────── FOOTER ──────── */
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,.05);padding:40px;text-align:center}
+.ft-name{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;color:#fff;margin-bottom:6px}
+.ft-name span{color:var(--red)}
+.ft-info{font-size:12px;color:rgba(255,255,255,.25)}
+
+/* ──────── RESPONSIVE ──────── */
+@media(max-width:760px){
+  /* 共通 */
+  .sec{padding:64px 20px}
+  .intro-sec,.score-sec,.mark-sec,.redo-sec,.subjects-sec,.compare-sec,.stumble-sec,.about-sec,.check-sec,.cta-sec,.weeks-sec{padding:64px 20px}
+
+  /* ナビ */
+  nav{padding:0 16px}
+  .nav-logo{font-size:12px}
+  .nav-cta{font-size:11px;padding:7px 14px}
+
+  /* HERO */
+  .hero-inner{padding:48px 20px 80px}
+  .hero-badge{padding:7px 14px;margin-bottom:32px}
+  .hero-badge-text{font-size:9px;letter-spacing:.12em}
+  .hero-btns{flex-direction:column;gap:12px}
+  .btn-primary,.btn-ghost{width:100%;text-align:center;padding:16px 24px;font-size:15px}
+
+  /* グリッド系 */
+  .intro-grid{grid-template-columns:1fr;gap:40px}
+  .intro-sticky{position:static}
+  .mistakes-grid{grid-template-columns:1fr}
+  .redo-grid{grid-template-columns:1fr}
+  .compare-wrap{grid-template-columns:1fr}
+  .cta-boxes{grid-template-columns:1fr}
+
+  /* スコアテーブル：2列に絞る */
+  .score-th{grid-template-columns:1fr 1fr;padding:12px 16px}
+  .score-tr{grid-template-columns:1fr 1fr;padding:14px 16px}
+  .score-foot{grid-template-columns:1fr 1fr;padding:16px 16px}
+  .score-th span:nth-child(2),.score-th span:nth-child(4),
+  .score-tr .score-now,.score-tr .score-diff,
+  .score-foot .score-foot-now,.score-foot .score-foot-diff{display:none}
+  .score-sub{font-size:14px}
+  .score-target{font-size:15px}
+  .score-foot-label{font-size:12px}
+  .score-foot-target{font-size:28px}
+
+  /* 週タブ */
+  .week-tabs{display:grid;grid-template-columns:repeat(4,1fr)}
+  .week-tab{font-size:10px;padding:12px 4px;letter-spacing:0;line-height:1.4}
+  .wp-header{grid-template-columns:1fr;gap:12px;padding:24px 20px}
+  .wp-num{font-size:52px}
+  .wp-title{font-size:18px}
+  .wp-body{padding:24px 20px}
+  .wp-goal{flex-direction:column;gap:10px;padding:20px;align-items:flex-start}
+  .step-item{grid-template-columns:48px 1fr}
+  .step-n{font-size:22px}
+
+  /* Mark table */
+  .mark-table{font-size:13px}
+  .mark-table th,.mark-table td{padding:12px 12px}
+
+  /* 解き直しノート */
+  .redo-example{padding:28px 20px}
+
+  /* Stumble */
+  .stumble-item{grid-template-columns:56px 1fr}
+  .stumble-n{font-size:28px}
+  .stumble-content{padding:20px 20px}
+  .stumble-content h3{font-size:15px}
+
+  /* サービス */
+  .svc-item{grid-template-columns:52px 1fr}
+  .svc-content{padding:20px 18px}
+  .svc-head{font-size:15px}
+
+  /* CTAボタン */
+  .cta-btn{padding:18px 24px;font-size:15px;display:block;text-align:center}
+  .cta-btn-wrap{width:100%}
+  .cta-btn-wrap a[href*="lin.ee"]{width:100%;justify-content:center;font-size:14px;padding:15px 20px}
+
+  /* チェックリスト */
+  .check-grid{grid-template-columns:1fr}
+  .check-result{flex-direction:column;gap:8px}
+  .cr-count{font-size:40px}
+
+  /* 定員バナー */
+  .teiin-banner{flex-direction:column;gap:10px;padding:20px 16px;text-align:center}
+  .teiin-banner .divider-v{display:none}
+}
+</style>
 </head>
 <body>
-  <div class="viewer">
-    <div class="book-area" id="bookArea">
-      <img id="pageImage" src="page1.png" alt="受験戦略ガイド 1ページ目" />
-      <div class="swipe-indicator">← スワイプでページ移動 →</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#"><span>SC</span>アカデミー</a>
+  <a class="nav-cta" href="https://scacademy-shibata.jp/contact/" target="_blank" rel="noopener">無料体験相談</a>
+</nav>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="hero-lines"></div>
+  <div class="hero-bg-num">300→400</div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span class="hero-badge-text">SCアカデミー 定期テスト対策 &#8212; 4週間プロジェクト</span>
     </div>
-
-    <div class="page-info" id="pageInfo">1 / 10</div>
-
-    <div class="controls">
-      <button id="prevBtn" onclick="prevPage()">← 前へ</button>
-      <button id="nextBtn" onclick="nextPage()">次へ →</button>
+    <div class="hero-score-row">
+      <span class="score-from">300</span>
+      <span class="score-arrow">→</span>
+      <span class="score-to">400<span class="score-suffix">点</span></span>
     </div>
-
-    <div class="hint">スマホでは左右スワイプでもページを切り替えられます</div>
+    <h1 class="hero-title" style="color:#fff">
+      勉強量を増やすのではなく、<br>
+      <em>やり方を変える</em>だけでいい。
+    </h1>
+    <p class="hero-sub">
+      定期テストで400点を取る生徒は、特別に頭がいいわけではありません。違うのは、何を・いつ・どの順番で・どこまでやるかが決まっていることです。
+      この4週間プロジェクトが、そのすべてを教えます。
+    </p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#weeks">4週間の全体像を見る</a>
+      <a class="btn-ghost" href="https://lin.ee/SPm6Vqd" target="_blank" rel="noopener">LINEで相談してみる</a>
+    </div>
   </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-text">Scroll</span>
+  </div>
+</section>
 
-  <script>
-    let currentPage = 1;
-    const totalPages = 10;
+<!-- ═══════ PROBLEM / INTRO ═══════ -->
+<section class="intro-sec">
+  <div class="sec-inner">
+    <div class="intro-grid">
+      <div class="intro-sticky">
+        <span class="label">The Problem</span>
+        <div class="divbar"></div>
+        <h2 class="h2">「頑張っているのに<br>300点台」から<br>抜け出したい<br>中学生へ</h2>
+        <div class="insight-box" style="margin-top:40px">
+          <p>点数が伸びない原因は、<strong>勉強量ではなく、勉強の中身にあります。</strong></p>
+          <p class="sub" style="margin-top:12px">必要なのは、できない問題を、できる問題に変えること。それだけです。</p>
+        </div>
+      </div>
+      <div>
+        <p class="lead" style="margin-bottom:28px">点数が伸びない生徒には、共通のパターンがあります。思い当たることはありませんか？</p>
+        <ul class="problem-list">
+          <li><span class="s-dot" style="margin-top:2px;flex-shrink:0"></span><span>テスト前に慌ててワークを終わらせている</span></li>
+          <li><span class="s-dot" style="margin-top:2px;flex-shrink:0"></span><span>答え合わせをして終わりにしている</span></li>
+          <li><span class="s-dot" style="margin-top:2px;flex-shrink:0"></span><span>間違えた問題を解き直していない</span></li>
+          <li><span class="s-dot" style="margin-top:2px;flex-shrink:0"></span><span>暗記を「見るだけ」で済ませている</span></li>
+          <li><span class="s-dot" style="margin-top:2px;flex-shrink:0"></span><span>勉強時間はあるのに、点数に結びつかない</span></li>
+          <li><span class="s-dot" style="margin-top:2px;flex-shrink:0"></span><span>1週間前から勉強をはじめて間に合わない</span></li>
+        </ul>
+        <div style="margin-top:36px;padding:28px;background:var(--cream2);border-left:3px solid var(--red)">
+          <p style="font-size:15px;font-weight:700;line-height:1.7">300点から400点に上げるために必要なのは、<em>勉強量を少し増やすことではありません。</em>必要なのは、<em>できない問題をできる問題に変えること</em>です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    const pageImage = document.getElementById("pageImage");
-    const pageInfo = document.getElementById("pageInfo");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const bookArea = document.getElementById("bookArea");
+<!-- ═══════ SCORE TABLE ═══════ -->
+<section class="score-sec">
+  <div class="sec-inner">
+    <span class="label">What You Need</span>
+    <div class="divbar"></div>
+    <h2 class="h2">300点から400点は、<br>1教科あたり<em>20点</em>の差</h2>
+    <p class="lead" style="margin-top:20px;max-width:640px">5教科300点は平均1教科60点。400点なら平均80点。難問を解ける必要はありません。基本問題・学校ワーク・暗記問題・授業内容で落としている点を取り戻すだけで届きます。</p>
+    <div class="score-table-wrap">
+      <div class="score-th">
+        <span>教科</span>
+        <span>現在の目安</span>
+        <span>目標点数</span>
+        <span>必要な伸び</span>
+      </div>
+      <div class="score-tr">
+        <span class="score-sub"><span class="s-dot"></span>英語</span>
+        <span class="score-now">60点</span>
+        <span class="score-target">80点</span>
+        <span class="score-diff">+20点</span>
+      </div>
+      <div class="score-tr">
+        <span class="score-sub"><span class="s-dot"></span>数学</span>
+        <span class="score-now">60点</span>
+        <span class="score-target">80点</span>
+        <span class="score-diff">+20点</span>
+      </div>
+      <div class="score-tr">
+        <span class="score-sub"><span class="s-dot"></span>国語</span>
+        <span class="score-now">60点</span>
+        <span class="score-target">80点</span>
+        <span class="score-diff">+20点</span>
+      </div>
+      <div class="score-tr">
+        <span class="score-sub"><span class="s-dot"></span>理科</span>
+        <span class="score-now">60点</span>
+        <span class="score-target">80点</span>
+        <span class="score-diff">+20点</span>
+      </div>
+      <div class="score-tr">
+        <span class="score-sub"><span class="s-dot"></span>社会</span>
+        <span class="score-now">60点</span>
+        <span class="score-target">80点</span>
+        <span class="score-diff">+20点</span>
+      </div>
+      <div class="score-foot">
+        <span class="score-foot-label">合計</span>
+        <span class="score-foot-now">300点</span>
+        <span class="score-foot-target">400点</span>
+        <span class="score-foot-diff">+100点</span>
+      </div>
+    </div>
+    <p class="score-note">※ 点数は目安です。各教科の現状によって目標配分は変わります。難問を解ける必要はなく、まず「取れる問題を確実に取る」ことが最優先です。</p>
+  </div>
+</section>
 
-    function updatePage() {
-      pageImage.src = `page${currentPage}.png`;
-      pageImage.alt = `受験戦略ガイド ${currentPage}ページ目`;
-      pageInfo.textContent = `${currentPage} / ${totalPages}`;
+<!-- ═══════ COMMON MISTAKES ═══════ -->
+<section class="mistakes-sec">
+  <div class="sec-inner">
+    <span class="label label-w">Common Mistakes</span>
+    <div class="divbar"></div>
+    <h2 class="h2" style="color:#fff;margin-bottom:16px">300点台で止まる生徒の<br><em>3つの共通点</em></h2>
+    <p class="lead" style="color:rgba(255,255,255,.4)">どれか1つでも当てはまれば、やり方を変えるだけで点数は動きます。</p>
+    <div class="mistakes-grid">
+      <!-- 失敗1 -->
+      <div class="mistake-card" data-n="01">
+        <span class="m-tag">Mistake 01</span>
+        <h3 class="h3" style="color:#fff;margin-bottom:14px;font-size:17px">ワークを「提出物」として<br>やっている</h3>
+        <p style="font-size:14px;color:rgba(255,255,255,.4);line-height:1.85;margin-bottom:20px">とりあえず埋める、答えを見ながら進める、丸つけして終わり。テスト直前に提出のためだけにやる。これでは点数は上がりません。</p>
+        <div class="wrong-right">
+          <div class="wr-label wrong">❌ やりがちな使い方</div>
+          <ul class="wr-list wrong-list">
+            <li>とりあえず埋めて提出</li>
+            <li>答えを見ながら進める</li>
+            <li>丸つけして終わり</li>
+          </ul>
+          <div class="wr-label right" style="margin-top:16px">✓ 400点を取る使い方（3周）</div>
+          <ul class="wr-list right-list">
+            <li>1周目：できない問題を見つける</li>
+            <li>2周目：間違えた問題を解けるようにする</li>
+            <li>3周目：本番でミスなく解けるか確認する</li>
+          </ul>
+        </div>
+      </div>
+      <!-- 失敗2 -->
+      <div class="mistake-card" data-n="02">
+        <span class="m-tag">Mistake 02</span>
+        <h3 class="h3" style="color:#fff;margin-bottom:14px;font-size:17px">暗記を「見て覚える」<br>で終えている</h3>
+        <p style="font-size:14px;color:rgba(255,255,255,.4);line-height:1.85;margin-bottom:20px">何回も見れば覚える、赤シートで隠せば覚える、ノートをまとめれば覚える。でも、テストで必要なのは「見てわかること」ではありません。</p>
+        <div class="wrong-right">
+          <div class="wr-label wrong">❌ 点数にならない暗記</div>
+          <ul class="wr-list wrong-list">
+            <li>教科書を読む・マーカーを引く</li>
+            <li>ノートを眺める</li>
+            <li>答えを見て「覚えた」で終える</li>
+          </ul>
+          <div class="wr-label right" style="margin-top:16px">✓ 本番で使える暗記</div>
+          <ul class="wr-list right-list">
+            <li>隠して言えるか確認する</li>
+            <li>白紙に書き出す</li>
+            <li>自分で小テストをする</li>
+            <li>間違えたものだけ翌日もう一度やる</li>
+          </ul>
+        </div>
+      </div>
+      <!-- 失敗3 -->
+      <div class="mistake-card" data-n="03">
+        <span class="m-tag">Mistake 03</span>
+        <h3 class="h3" style="color:#fff;margin-bottom:14px;font-size:17px">間違えた問題を<br>そのままにしている</h3>
+        <p style="font-size:14px;color:rgba(255,255,255,.4);line-height:1.85;margin-bottom:20px">300点から400点に上がらない最大の原因はこれです。問題を解くところまではやっている。でも、その後が甘い。</p>
+        <div class="wrong-right">
+          <div class="wr-label wrong">❌ 「わかった」で終わる流れ</div>
+          <ul class="wr-list wrong-list">
+            <li>答えを見る</li>
+            <li>解説を読む</li>
+            <li>「わかった」と思う</li>
+            <li>次の問題へ進む</li>
+          </ul>
+          <div class="wr-label right" style="margin-top:16px">✓ 本番で解ける状態にする流れ</div>
+          <ul class="wr-list right-list">
+            <li>解説を閉じてもう一度解く</li>
+            <li>なぜ間違えたかを一言で書く</li>
+            <li>翌日、何も見ずにもう一度解く</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      prevBtn.disabled = currentPage === 1;
-      nextBtn.disabled = currentPage === totalPages;
+<!-- ═══════ 4 WEEKS ═══════ -->
+<section class="weeks-sec" id="weeks">
+  <div class="sec-inner">
+    <span class="label">4-Week Project</span>
+    <div class="divbar"></div>
+    <h2 class="h2">300点から400点に上げる<br><em>4週間プロジェクト</em></h2>
+    <p class="lead" style="margin-top:16px;margin-bottom:0;max-width:600px">毎週やることを変えることが大切です。ずっと同じ勉強をしていてはいけません。</p>
+
+    <div class="week-tabs">
+      <button class="week-tab active" onclick="showWeek(0)">WEEK 1<br><span style="font-size:8px;opacity:.6">4週間前</span></button>
+      <button class="week-tab" onclick="showWeek(1)">WEEK 2<br><span style="font-size:8px;opacity:.6">3週間前</span></button>
+      <button class="week-tab" onclick="showWeek(2)">WEEK 3<br><span style="font-size:8px;opacity:.6">2週間前</span></button>
+      <button class="week-tab" onclick="showWeek(3)">WEEK 4<br><span style="font-size:8px;opacity:.6">1週間前</span></button>
+    </div>
+
+    <div class="week-panels">
+      <!-- WEEK 1 -->
+      <div class="week-panel active" id="wp0">
+        <div class="wp-header">
+          <div class="wp-num">W1</div>
+          <div class="wp-header-text">
+            <p class="wp-period">テスト4週間前〜3週間前</p>
+            <h3 class="wp-title">まずは「できない問題」を全部出す</h3>
+            <p class="wp-desc">この週の目的は完璧にすることではありません。「自分がどこで点数を落としているか」を見つけることです。最初の1週間は「発見」の週です。</p>
+          </div>
+        </div>
+        <div class="wp-body">
+          <div class="wp-steps">
+            <div class="step-item">
+              <div class="step-num-col"><span class="step-n">1</span><span style="font-size:8px;color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em">STEP</span></div>
+              <div class="step-content">
+                <h4 class="step-head">学校ワークを全教科1周する</h4>
+                <p class="step-body">完璧に解こうとしない。わからない問題に時間をかけすぎると全体が終わりません。1問考えてわからなければ印をつけ、解説を確認して先へ進む。間違えた問題には必ずチェックをつけること。<br><strong style="color:var(--ink)">この段階の最優先：できる問題とできない問題を分けること。</strong></p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num-col"><span class="step-n">2</span><span style="font-size:8px;color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em">STEP</span></div>
+              <div class="step-content">
+                <h4 class="step-head">間違えた問題に3種類の印をつける</h4>
+                <p class="step-body">ただ丸バツをつけるだけでは弱いです。原因別に印をつけることで、次にやるべきことが見えます。</p>
+                <ul class="step-sub-list">
+                  <li>△ 考え方は合っていたがミスした → ミス対策が必要</li>
+                  <li>× 解き方がわからなかった → 解き方の理解が必要</li>
+                  <li>★ 暗記できていなかった → 暗記量が不足</li>
+                </ul>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num-col"><span class="step-n">3</span><span style="font-size:8px;color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em">STEP</span></div>
+              <div class="step-content">
+                <h4 class="step-head">教科書・ノート・プリントを整理する</h4>
+                <p class="step-body">テスト範囲の教材を全部そろえます。教材がバラバラだと、勉強もバラバラになります。</p>
+                <ul class="step-sub-list">
+                  <li>学校ワーク・授業ノート・配布プリント</li>
+                  <li>小テスト・教科書の太字</li>
+                  <li>先生が強調したところ（板書・口頭で言ったこと）</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wp-goal">
+          <span class="goal-icon">WEEK 1<br>GOAL</span>
+          <span class="goal-text">全教科のテスト範囲を一通り確認し、できない問題に印がついている状態。できない問題が見つかったなら成功です。</span>
+        </div>
+      </div>
+
+      <!-- WEEK 2 -->
+      <div class="week-panel" id="wp1">
+        <div class="wp-header">
+          <div class="wp-num">W2</div>
+          <div class="wp-header-text">
+            <p class="wp-period">テスト3週間前〜2週間前</p>
+            <h3 class="wp-title">間違えた問題を「解ける問題」に変える</h3>
+            <p class="wp-desc">この週が一番大事です。300点から400点に上がるかどうかは、ほぼこの週の解き直しで決まります。できる問題を何度も解くのではなく、できなかった問題をできるようにすることに時間を使います。</p>
+          </div>
+        </div>
+        <div class="wp-body">
+          <div class="wp-steps">
+            <div class="step-item">
+              <div class="step-num-col"><span class="step-n">1</span><span style="font-size:8px;color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em">STEP</span></div>
+              <div class="step-content">
+                <h4 class="step-head">WEEK 1で間違えた問題だけを解く</h4>
+                <p class="step-body">できる問題を解くと安心します。でも、それでは点数はあまり上がりません。この週は間違えた問題だけに時間を使います。</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num-col"><span class="step-n">2</span><span style="font-size:8px;color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em">STEP</span></div>
+              <div class="step-content">
+                <h4 class="step-head">解き直しは「3段階」でやる</h4>
+                <p class="step-body">解き直しは、ただもう一度解くだけでは不十分です。</p>
+                <ul class="step-sub-list">
+                  <li><strong>Step 1</strong> 解説を読んで「なぜ間違えたか」を確認。答えを覚えるのではなく考え方を理解する。</li>
+                  <li><strong>Step 2</strong> 解説を閉じてもう一度解く。解けなければまだ「わかったつもり」。</li>
+                  <li><strong>Step 3</strong> 翌日、何も見ずにもう一度解く。その場で解けても翌日できなければ本番で危険。</li>
+                </ul>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num-col"><span class="step-n">3</span><span style="font-size:8px;color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em">STEP</span></div>
+              <div class="step-content">
+                <h4 class="step-head">解き直しノートを作る（シンプルに）</h4>
+                <p class="step-body">きれいに作る必要はありません。書くことは3つだけ。</p>
+                <ul class="step-sub-list">
+                  <li>間違えた問題番号</li>
+                  <li>間違えた理由（一言で）</li>
+                  <li>次に気をつけること</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wp-goal">
+          <span class="goal-icon">WEEK 2<br>GOAL</span>
+          <span class="goal-text">1回目に間違えた問題の半分以上を、自力で解けるようにすること。ここで点数の土台が大きく変わります。</span>
+        </div>
+      </div>
+
+      <!-- WEEK 3 -->
+      <div class="week-panel" id="wp2">
+        <div class="wp-header">
+          <div class="wp-num">W3</div>
+          <div class="wp-header-text">
+            <p class="wp-period">テスト2週間前〜1週間前</p>
+            <h3 class="wp-title">暗記と標準問題を得点に変える</h3>
+            <p class="wp-desc">「わかる」から「できる」へ変える週です。WEEK 2で解き直しをしても、まだ不安定な部分があります。この週で、知識を点数に変えます。</p>
+          </div>
+        </div>
+        <div class="wp-body">
+          <div class="wp-steps">
+            <div class="step-item">
+              <div class="step-num-col"><span class="step-n">1</span><span style="font-size:8px;color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em">STEP</span></div>
+              <div class="step-content">
+                <h4 class="step-head">暗記を小テスト形式にする</h4>
+                <p class="step-body">英単語、漢字、理科、社会は小テスト形式で確認します。覚える時間より確認する時間を増やすことが大切です。</p>
+                <ul class="step-sub-list">
+                  <li>覚える範囲を決める → 5〜10分覚える</li>
+                  <li>何も見ずにテストする → 間違えたものに印をつける</li>
+                  <li>翌日もう一度テストする</li>
+                </ul>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num-col"><span class="step-n">2</span><span style="font-size:8px;color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em">STEP</span></div>
+              <div class="step-content">
+                <h4 class="step-head">学校ワーク2周目を完成させる</h4>
+                <p class="step-body">全部を同じようにやる必要はありません。優先順位を守って進めます。</p>
+                <ul class="step-sub-list">
+                  <li>① 1回目に間違えた問題（最優先）</li>
+                  <li>② 授業で先生が強調した問題</li>
+                  <li>③ 基本〜標準問題</li>
+                  <li>④ 応用問題（時間があれば）</li>
+                </ul>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num-col"><span class="step-n">3</span><span style="font-size:8px;color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em">STEP</span></div>
+              <div class="step-content">
+                <h4 class="step-head">教科別に「点数の取りどころ」を決める</h4>
+                <p class="step-body">400点を目指すなら、全教科で完璧を目指す必要はありません。各教科で確実に取る部分を決めます。</p>
+                <ul class="step-sub-list">
+                  <li>英語：単語・本文・基本文法・並べ替え</li>
+                  <li>数学：計算・基本問題・標準問題</li>
+                  <li>国語：漢字・文法・授業内容・ワーク問題</li>
+                  <li>理科：用語・基本計算・実験問題</li>
+                  <li>社会：重要語句・流れ・資料問題</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wp-goal">
+          <span class="goal-icon">WEEK 3<br>GOAL</span>
+          <span class="goal-text">学校ワーク2周目が終わり、暗記項目を小テスト形式で確認できている状態。「何をやればいいかわからない」状態から抜け出せています。</span>
+        </div>
+      </div>
+
+      <!-- WEEK 4 -->
+      <div class="week-panel" id="wp3">
+        <div class="wp-header">
+          <div class="wp-num">W4</div>
+          <div class="wp-header-text">
+            <p class="wp-period">テスト1週間前〜前日</p>
+            <h3 class="wp-title">本番で点数を落とさない仕上げ</h3>
+            <p class="wp-desc">最後の1週間は新しいことを増やす週ではありません。本番で落とす点数を減らすことが目的です。300点台の生徒は、実力不足だけでなくミスでかなり点を落としています。</p>
+          </div>
+        </div>
+        <div class="wp-body">
+          <div class="wp-steps">
+            <div class="step-item">
+              <div class="step-num-col"><span class="step-n">1</span><span style="font-size:8px;color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em">STEP</span></div>
+              <div class="step-content">
+                <h4 class="step-head">時間を測って解く</h4>
+                <p class="step-body">本番では時間制限があります。家で解けても、テスト中に間に合わなければ点数になりません。</p>
+                <ul class="step-sub-list">
+                  <li>数学：大問ごとに時間を決める</li>
+                  <li>英語：長文・文法・英作文の時間配分を決める</li>
+                  <li>理科・社会：記述も時間内に書く練習をする</li>
+                  <li>国語：漢字・文法を先に取るか順番を決める</li>
+                </ul>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num-col"><span class="step-n">2</span><span style="font-size:8px;color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em">STEP</span></div>
+              <div class="step-content">
+                <h4 class="step-head">ミスノートを作る</h4>
+                <p class="step-body">全部書く必要はありません。「自分が何度もやってしまうミス」だけ書きます。テスト前日に見るだけでミスは減ります。</p>
+                <ul class="step-sub-list">
+                  <li>符号を間違える・単位を書き忘れる</li>
+                  <li>問題文の「正しくないもの」を読み落とす</li>
+                  <li>英語の三単現を忘れる・漢字の送り仮名を間違える</li>
+                  <li>社会の漢字ミスで落とす</li>
+                </ul>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num-col"><span class="step-n">3</span><span style="font-size:8px;color:var(--muted);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.1em">STEP</span></div>
+              <div class="step-content">
+                <h4 class="step-head">前日は「確認」に使う</h4>
+                <p class="step-body">前日に新しい問題を大量にやるのは逆効果です。不安が増えるだけ。前日はいままで間違えた問題の最終確認に使います。</p>
+                <ul class="step-sub-list">
+                  <li>ミスノートを見る</li>
+                  <li>暗記の最終チェック</li>
+                  <li>学校プリントの確認</li>
+                  <li>ワークの印がついた問題だけ見る</li>
+                  <li><strong>早めに寝る</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wp-goal">
+          <span class="goal-icon">WEEK 4<br>GOAL</span>
+          <span class="goal-text">本番で取れる問題を落とさない状態。400点に届くかは、最後の1週間で「余計な失点」をどれだけ減らせるかで決まります。</span>
+        </div>
+      </div>
+    </div><!-- /week-panels -->
+  </div>
+</section>
+
+<!-- ═══════ MARK TABLE ═══════ -->
+<section class="mark-sec">
+  <div class="sec-inner">
+    <span class="label">Mistake Analysis</span>
+    <div class="divbar"></div>
+    <h2 class="h2">間違いを3種類に分けると<br>次にやることが見える</h2>
+    <p class="lead" style="margin-top:16px;max-width:600px">ただ丸バツをつけるだけでは弱い。原因別に印をつけることで、残り時間をどこに使うべきかが明確になります。</p>
+    <table class="mark-table">
+      <thead>
+        <tr>
+          <th style="width:80px">印</th>
+          <th>意味</th>
+          <th>次にやること</th>
+          <th>注意点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="mark-badge tri" style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900">△</div></td>
+          <td><div class="mark-meaning">考え方は合っていたがミスした</div><div class="mark-next">計算ミス、符号ミス、読み落としなど</div></td>
+          <td>ミス対策。途中式を丁寧に書く、問題文に下線を引く習慣をつける</td>
+          <td>「ケアレスミスだから大丈夫」で終わらせない。ミスにも必ず原因がある</td>
+        </tr>
+        <tr>
+          <td><div class="mark-badge x" style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900">×</div></td>
+          <td><div class="mark-meaning">解き方がわからなかった</div><div class="mark-next">概念・公式・解法の理解が不足</div></td>
+          <td>解説を読んで考え方を理解する。閉じてもう一度解く。翌日また解く</td>
+          <td>解説を読んで「わかった」で終わるのが最も危険。必ず自力で再現する</td>
+        </tr>
+        <tr>
+          <td><div class="mark-badge star" style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900">★</div></td>
+          <td><div class="mark-meaning">暗記できていなかった</div><div class="mark-next">用語・単語・公式・漢字の記憶不足</div></td>
+          <td>白紙に書いて確認。見るだけの暗記から「思い出す練習」に切り替える</td>
+          <td>「見ればわかる」は暗記できていない証拠。書けて初めて「覚えた」と言える</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════ REDO NOTE ═══════ -->
+<section class="redo-sec">
+  <div class="sec-inner">
+    <span class="label">How to Redo</span>
+    <div class="divbar"></div>
+    <h2 class="h2">解き直しノートの作り方</h2>
+    <p class="lead" style="margin-top:16px;max-width:560px">きれいに作る必要はありません。時間をかけすぎてもいけません。書くことは3つだけ。</p>
+    <div class="redo-grid">
+      <div class="redo-col">
+        <h3 class="h3" style="margin-bottom:28px;font-size:18px">3つの解き直しステップ</h3>
+        <div class="redo-step">
+          <span class="redo-n">1</span>
+          <div class="redo-text">
+            <h4>解説を読んで理解する</h4>
+            <p>なぜ間違えたのかを確認。答えを覚えることではなく、考え方を理解することが目的。</p>
+          </div>
+        </div>
+        <div class="redo-step">
+          <span class="redo-n">2</span>
+          <div class="redo-text">
+            <h4>解説を閉じてもう一度解く</h4>
+            <p>解説を読んだら必ず閉じる。何も見ずに解けなければ、まだ「わかったつもり」の状態。</p>
+          </div>
+        </div>
+        <div class="redo-step">
+          <span class="redo-n">3</span>
+          <div class="redo-text">
+            <h4>翌日にもう一度解く</h4>
+            <p>その場で解けても翌日できなければ本番では危険。間違えた問題は必ず翌日も確認する。</p>
+          </div>
+        </div>
+        <div style="margin-top:32px;background:var(--cream);padding:20px 24px;border-left:3px solid var(--red)">
+          <p style="font-size:14px;font-weight:700;line-height:1.7">ノートに書くのは3つだけ<br>① 問題番号　② 間違えた理由　③ 次に気をつけること</p>
+        </div>
+      </div>
+      <div class="redo-example">
+        <div class="example-title">解き直しノート 記入例</div>
+        <div class="example-cards">
+          <div class="ex-card">
+            <div class="ex-subj">数学</div>
+            <div class="ex-row"><span class="ex-label">問題</span><span class="ex-val">ワークP32 ④</span></div>
+            <div class="ex-row"><span class="ex-label">理由</span><span class="ex-val">移項したとき符号を変え忘れた</span></div>
+            <div class="ex-row"><span class="ex-label">次</span><span class="ex-val">移項したら符号に丸をつける</span></div>
+          </div>
+          <div class="ex-card">
+            <div class="ex-subj">英語</div>
+            <div class="ex-row"><span class="ex-label">問題</span><span class="ex-val">ワークP18 ②</span></div>
+            <div class="ex-row"><span class="ex-label">理由</span><span class="ex-val">三単現のsを忘れた</span></div>
+            <div class="ex-row"><span class="ex-label">次</span><span class="ex-val">主語がhe/she/itなら動詞を確認</span></div>
+          </div>
+          <div class="ex-card">
+            <div class="ex-subj">社会</div>
+            <div class="ex-row"><span class="ex-label">問題</span><span class="ex-val">ワークP44 ⑦</span></div>
+            <div class="ex-row"><span class="ex-label">理由</span><span class="ex-val">語句は見たことがあったが書けなかった</span></div>
+            <div class="ex-row"><span class="ex-label">次</span><span class="ex-val">赤シートではなく白紙に書いて確認</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SUBJECTS ═══════ -->
+<section class="subjects-sec">
+  <div class="sec-inner">
+    <span class="label">By Subject</span>
+    <div class="divbar"></div>
+    <h2 class="h2">教科別｜<em>300点から400点</em>に<br>上げる具体策</h2>
+    <div class="subjects-grid">
+      <div class="subj-card">
+        <div class="subj-abbr">ENG</div>
+        <h3 class="subj-name">英語</h3>
+        <p class="subj-em">300点台の生徒は、単語を「見ればわかる」で止めていることが多い。テストでは書けないと点になりません。</p>
+        <ul class="subj-points">
+          <li>単語を「書ける」まで仕上げる（見てわかるは不十分）</li>
+          <li>教科書本文を訳せる状態にする</li>
+          <li>基本文法を理由つきで説明できる</li>
+          <li>並べ替え・英作文で「使える」状態にする</li>
+        </ul>
+        <span class="subj-key">見てわかる → 書ける → 使える の順番で</span>
+      </div>
+      <div class="subj-card">
+        <div class="subj-abbr">MAT</div>
+        <h3 class="subj-name">数学</h3>
+        <p class="subj-em">数学が苦手な生徒ほど、解説を見て「わかった」で終わります。本当に大切なのは、解説を閉じてもう一度解けるかです。</p>
+        <ul class="subj-points">
+          <li>基本問題・標準問題を落とさないことが最優先</li>
+          <li>途中式を必ず書く</li>
+          <li>ミスの型（符号・読み落とし・単位）を記録してつぶす</li>
+          <li>難問より基本問題の失点ゼロを先に目指す</li>
+        </ul>
+        <span class="subj-key">難問対策より基本の失点ゼロが先</span>
+      </div>
+      <div class="subj-card">
+        <div class="subj-abbr">JPN</div>
+        <h3 class="subj-name">国語</h3>
+        <p class="subj-em">国語が苦手な生徒ほど、読解問題ばかり不安に思います。でも定期テストでは、対策できる部分が多い教科です。</p>
+        <ul class="subj-points">
+          <li>漢字・文法・語句の意味で確実に得点</li>
+          <li>授業ノート・板書・プリントを読み返す</li>
+          <li>先生が強調した部分・授業で扱った本文を確認</li>
+          <li>読解は授業で扱った文章を中心に対策</li>
+        </ul>
+        <span class="subj-key">取れるところを確実に取る教科として考える</span>
+      </div>
+      <div class="subj-card">
+        <div class="subj-abbr">SCI</div>
+        <h3 class="subj-name">理科</h3>
+        <p class="subj-em">用語暗記だけでは点数が伸びません。「なんとなく覚えた」ではなく「問題で使える」状態にすることが大切です。</p>
+        <ul class="subj-points">
+          <li>用語を覚える（土台）</li>
+          <li>実験の目的・手順・結果を説明できる</li>
+          <li>グラフ読み取りの練習をする</li>
+          <li>計算問題・記述問題まで仕上げる</li>
+        </ul>
+        <span class="subj-key">「知ってる」から「解ける」まで仕上げる</span>
+      </div>
+      <div class="subj-card">
+        <div class="subj-abbr">SOC</div>
+        <h3 class="subj-name">社会</h3>
+        <p class="subj-em">300点から400点を目指す生徒にとって、最も得点源にしやすい教科です。早めに始める価値があります。</p>
+        <ul class="subj-points">
+          <li>重要語句を漢字で正しく書けるようにする</li>
+          <li>時代・出来事の流れを理解する</li>
+          <li>地図・資料・グラフの読み取りに慣れる</li>
+          <li>理由を記述できるようにする</li>
+        </ul>
+        <span class="subj-key">一問一答から、「なぜ」まで説明できる段階へ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ STUMBLE ═══════ -->
+<section class="stumble-sec">
+  <div class="sec-inner">
+    <span class="label label-w">Why It's Hard</span>
+    <div class="divbar"></div>
+    <h2 class="h2" style="color:#fff">ここまで読んで、<br>どう感じましたか？</h2>
+    <p class="lead" style="color:rgba(255,255,255,.4);margin-top:16px;max-width:640px">ここまでの内容を実践できれば、300点から400点は十分に狙えます。でも正直に言うと、この4週間プロジェクトを<em style="color:rgba(255,255,255,.75)">1人でやり切るのは簡単ではありません。</em>必要なのは「知識」だけではないからです。</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.04);margin-top:40px;margin-bottom:56px">
+      <div style="background:#111110;padding:24px 20px">
+        <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:10px">必要な力</div>
+        <ul style="list-style:none">
+          <li style="font-size:13px;color:rgba(255,255,255,.5);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);line-height:1.5">計画を立てる力</li>
+          <li style="font-size:13px;color:rgba(255,255,255,.5);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);line-height:1.5">毎日続ける力</li>
+          <li style="font-size:13px;color:rgba(255,255,255,.5);padding:6px 0;line-height:1.5">間違いを分析する力</li>
+        </ul>
+      </div>
+      <div style="background:#111110;padding:24px 20px">
+        <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:10px">必要な力</div>
+        <ul style="list-style:none">
+          <li style="font-size:13px;color:rgba(255,255,255,.5);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);line-height:1.5">やるべき問題を選ぶ力</li>
+          <li style="font-size:13px;color:rgba(255,255,255,.5);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);line-height:1.5">自分を動かす力</li>
+          <li style="font-size:13px;color:rgba(255,255,255,.5);padding:6px 0;line-height:1.5">勉強方法を修正する力</li>
+        </ul>
+      </div>
+      <div style="background:#111110;padding:24px 20px">
+        <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:10px">一番難しいのは</div>
+        <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.8">これを毎日、部活がある日も、疲れている日も、やり続けること。</p>
+        <p style="font-size:13px;color:rgba(255,255,255,.35);line-height:1.8;margin-top:8px">能力の問題ではありません。<br><strong style="color:rgba(255,255,255,.6)">環境の問題です。</strong></p>
+      </div>
+    </div>
+
+    <h3 class="h3" style="color:#fff;margin-bottom:40px">多くの生徒がつまずく3つのポイント</h3>
+    <div class="stumble-items">
+      <div class="stumble-item">
+        <div class="stumble-n-col"><span class="stumble-n">01</span></div>
+        <div class="stumble-content">
+          <h3>計画を立てても守れない</h3>
+          <p>最初はやる気があります。でも、部活がある日・疲れている日・宿題が多い日、計画通りに進まない日は必ず出てきます。そのとき必要なのは計画を立て直すことですが、1人では難しい。<span class="hi">計画は「立てること」より「修正すること」が大事です。</span></p>
+        </div>
+      </div>
+      <div class="stumble-item">
+        <div class="stumble-n-col"><span class="stumble-n">02</span></div>
+        <div class="stumble-content">
+          <h3>解き直しが甘くなる</h3>
+          <p>解き直しは面倒です。だから多くの生徒は、答えを見て「わかった」で終わってしまいます。本当に必要なのは何も見ずにもう一度解けるまでやることですが、<span class="hi">自分1人では「まあいいか」になってしまいます。</span></p>
+        </div>
+      </div>
+      <div class="stumble-item">
+        <div class="stumble-n-col"><span class="stumble-n">03</span></div>
+        <div class="stumble-content">
+          <h3>自分ではミスの原因に気づけない</h3>
+          <p>生徒本人は「ケアレスミスです」と言います。でもよく見ると、途中式を書いていない・問題文を読んでいない・基本用語が曖昧、といった別の原因があります。<span class="hi">本人が思っている原因と本当の原因がズレていることがほとんどです。</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ ABOUT SC ═══════ -->
+<section class="about-sec">
+  <div class="sec-inner">
+    <span class="label">SC Academy</span>
+    <div class="divbar"></div>
+    <h2 class="h2">だからSCアカデミーでは、<br>4週間を<em>一緒に管理</em>します</h2>
+    <p class="about-lead" style="margin-top:20px">「勉強しなさい」とは言いません。この4週間プロジェクトを、生徒一人ひとりに合わせて具体的に管理します。</p>
+
+    <div class="about-services">
+      <div class="svc-item">
+        <div class="svc-n-col"><span class="svc-n">01</span><span class="svc-n-label">Step</span></div>
+        <div class="svc-content">
+          <h3 class="svc-head">現在の点数と課題を分析する</h3>
+          <p class="svc-body">今の点数を見るだけではありません。どの教科で落としているか、どの単元が弱いか、暗記不足なのか・演習不足なのか・ミスが多いのか・そもそも勉強時間が足りないのかを確認します。</p>
+          <div class="svc-detail">
+            <span class="svc-chip">教科別分析</span>
+            <span class="svc-chip">単元別把握</span>
+            <span class="svc-chip">原因の特定</span>
+          </div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-n-col"><span class="svc-n">02</span><span class="svc-n-label">Step</span></div>
+        <div class="svc-content">
+          <h3 class="svc-head">4週間の学習計画を作成する</h3>
+          <p class="svc-body">テスト日から逆算して、何をいつまでに終わらせるかを決めます。4週間前・3週間前・2週間前・1週間前と段階を分けて、生徒ごとの状況に合わせて調整します。</p>
+          <div class="svc-detail">
+            <span class="svc-chip">逆算スケジュール</span>
+            <span class="svc-chip">個別カスタマイズ</span>
+            <span class="svc-chip">週次調整</span>
+          </div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-n-col"><span class="svc-n">03</span><span class="svc-n-label">Step</span></div>
+        <div class="svc-content">
+          <h3 class="svc-head">毎日のやることを明確化する</h3>
+          <p class="svc-body">「今日は勉強しよう」では続きません。今日・何を・何ページ・どこまでやるかを具体化します。例：数学ワークP32〜35の間違えた問題 / 英単語30個を小テスト形式で確認 / 社会の歴史語句を白紙テスト</p>
+          <div class="svc-detail">
+            <span class="svc-chip">デイリータスク管理</span>
+            <span class="svc-chip">具体的な指示</span>
+            <span class="svc-chip">進捗確認</span>
+          </div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-n-col"><span class="svc-n">04</span><span class="svc-n-label">Step</span></div>
+        <div class="svc-content">
+          <h3 class="svc-head">解き直しまで管理する</h3>
+          <p class="svc-body">問題を解いて終わりにしません。なぜ間違えたか、次にどうすれば防げるか、もう一度解けるか、翌日も解けるかまで確認します。大切なのは「解いたあと」です。</p>
+          <div class="svc-detail">
+            <span class="svc-chip">ミス原因の確認</span>
+            <span class="svc-chip">翌日確認システム</span>
+            <span class="svc-chip">暗記テスト</span>
+          </div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-n-col"><span class="svc-n">05</span><span class="svc-n-label">Step</span></div>
+        <div class="svc-content">
+          <h3 class="svc-head">テスト前の最終仕上げを行う</h3>
+          <p class="svc-body">最後の1週間は、本番で点数を落とさないための確認を行います。時間内に解けるか、ミスが減っているか、暗記が抜けていないか、学校プリントを確認したか、ワークの印がついた問題を解けるか。</p>
+          <div class="svc-detail">
+            <span class="svc-chip">時間制限練習</span>
+            <span class="svc-chip">ミス最終確認</span>
+            <span class="svc-chip">仕上げテスト</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SELF vs JUKU ═══════ -->
+<section class="compare-sec">
+  <div class="sec-inner">
+    <span class="label">Self vs SC Academy</span>
+    <div class="divbar"></div>
+    <h2 class="h2">自分でできるなら、<br>それが一番です。</h2>
+    <p class="lead" style="margin-top:16px;max-width:640px">この4週間プロジェクトを本気で実行できれば、点数は変わる可能性が高いです。もし「1人では続くか不安」と感じるなら、それは能力の問題ではなく、環境の問題です。</p>
+    <div class="compare-wrap">
+      <div class="compare-col self">
+        <div class="compare-header">
+          <div class="c-icon self-icon">🙋</div>
+          <span class="c-label">1人でやる場合</span>
+        </div>
+        <ul class="c-list" style="border-color:var(--border)">
+          <li>計画は立てるが、守れないことがある</li>
+          <li>解き直しが「わかった」で終わりやすい</li>
+          <li>自分のミスの原因に気づきにくい</li>
+          <li>疲れた日・部活の日はサボりやすい</li>
+          <li>何から始めればいいかわからなくなる</li>
+          <li>計画が崩れたとき修正できない</li>
+        </ul>
+      </div>
+      <div class="compare-col juku">
+        <div class="compare-header">
+          <div class="c-icon juku-icon">SC</div>
+          <span class="c-label" style="color:#fff">SCアカデミーと一緒にやる場合</span>
+        </div>
+        <ul class="c-list">
+          <li>計画を立て、週ごとに修正する</li>
+          <li>解き直しを「自力で解けるまで」管理する</li>
+          <li>ミスの本当の原因を外から指摘できる</li>
+          <li>毎日のやることが明確で動きやすい</li>
+          <li>つまずいたその日に対策できる</li>
+          <li>計画が崩れても立て直せる仕組みがある</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:24px;background:var(--cream);border-left:3px solid var(--red);padding:24px 28px;max-width:680px">
+      <p style="font-size:15px;font-weight:700;line-height:1.75">成績を上げるためには、本人のやる気だけに頼りすぎてはいけません。やる気は日によって変わります。必要なのは、<em>やる気が低い日でも勉強が進む仕組み</em>です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CHECKLIST ═══════ -->
+<section class="check-sec" id="check">
+  <div class="sec-inner">
+    <span class="label">Self Check</span>
+    <div class="divbar"></div>
+    <h2 class="h2">今すぐ確認。<br>あなたはいくつ当てはまりますか？</h2>
+    <p class="check-intro" style="margin-top:16px">3つ以上当てはまるなら、やり方を変えるだけで点数は必ず変わります。タップして確認してみてください。</p>
+    <div class="check-grid">
+      <div class="check-item" onclick="toggleCheck(this)"><div class="cb"></div><span class="cb-text">テスト1週間前から勉強を始めている</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="cb"></div><span class="cb-text">学校ワークを1回しか解いていない</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="cb"></div><span class="cb-text">間違えた問題を解き直していない</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="cb"></div><span class="cb-text">暗記は読むだけ・見るだけで終わっている</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="cb"></div><span class="cb-text">数学の途中式を書かない</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="cb"></div><span class="cb-text">英単語は見ればわかるが、書けない</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="cb"></div><span class="cb-text">理科・社会の記述問題が苦手</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="cb"></div><span class="cb-text">国語は何を勉強すればいいかわからない</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="cb"></div><span class="cb-text">スマホで勉強時間が削られている</span></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="cb"></div><span class="cb-text">勉強計画を立てても続かない</span></div>
+    </div>
+    <div class="check-result" id="checkResult">
+      <span class="cr-count" id="crCount">0</span>
+      <div class="cr-text">
+        <strong id="crHead">チェックしてみましょう</strong><br>
+        <span id="crSub">1つ以上当てはまれば、やり方を変えるだけで点数は変わります。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA FINAL ═══════ -->
+<section class="cta-sec" id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <span class="label">Let's Start Together</span>
+    <h2 class="h2" style="color:#fff;margin-bottom:20px">4週間プロジェクトを、<br>塾で<em>一緒に</em>やってみませんか？</h2>
+    <p class="lead" style="color:rgba(255,255,255,.45);margin-bottom:8px">
+      「次こそ変えたい」「でも1人では続くか不安」<br>
+      「何をやればいいか具体的に知りたい」<br>
+      そう感じた方は、まずは体験授業でご相談ください。
+    </p>
+    <p class="cta-school-name">SCアカデミー ｜ 新潟県新発田市</p>
+
+    <!-- 定員バナー -->
+    <div class="teiin-banner" style="display:inline-flex;align-items:center;gap:14px;border:1px solid rgba(197,48,32,.5);padding:14px 28px;margin-bottom:36px;background:rgba(197,48,32,.08)">
+      <div style="display:flex;flex-direction:column;align-items:center">
+        <span style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:2px">募集定員</span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:1;color:var(--red);letter-spacing:-.02em">5<span style="font-size:22px;color:rgba(255,255,255,.5);font-family:'Noto Sans JP',sans-serif;font-weight:700;vertical-align:baseline;letter-spacing:0">名</span></span>
+      </div>
+      <div class="divider-v" style="width:1px;height:48px;background:rgba(255,255,255,.1)"></div>
+      <div style="text-align:left">
+        <p style="font-size:14px;font-weight:700;color:#fff;line-height:1.6">今期の募集は<em>残り5名</em>です。</p>
+        <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:4px">定員に達し次第、受付を終了します。<br>お早めにお申し込みください。</p>
+      </div>
+    </div>
+
+    <div class="cta-boxes">
+      <div class="cta-box">
+        <div class="cta-box-head">体験でわかること</div>
+        <ul class="cta-box-list">
+          <li>今の点数・勉強方法の問題点</li>
+          <li>400点に近づくために何を変えるか</li>
+          <li>4週間プロジェクトの具体的な内容</li>
+          <li>学校ワークの使い方の確認</li>
+        </ul>
+      </div>
+      <div class="cta-box">
+        <div class="cta-box-head">SCアカデミーが行うこと</div>
+        <ul class="cta-box-list">
+          <li>学習計画の作成と週次修正</li>
+          <li>毎日の勉強内容の具体的な指示</li>
+          <li>学校ワークの進捗管理・解き直し確認</li>
+          <li>暗記テスト・テスト前の最終仕上げ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cta-btn-wrap">
+      <a class="cta-btn" href="https://scacademy-shibata.jp/contact/" target="_blank" rel="noopener">無料体験授業のお申し込み</a>
+      <a href="https://lin.ee/SPm6Vqd" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#06C755;color:#fff;font-size:15px;font-weight:700;padding:16px 40px;text-decoration:none;letter-spacing:.04em;transition:opacity .15s;margin-top:4px" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+        <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#06C755"/><path d="M40 22.2C40 15.46 33.28 10 25 10C16.72 10 10 15.46 10 22.2C10 28.22 15.12 33.28 22.08 34.22C22.56 34.32 23.24 34.54 23.4 34.96C23.56 35.34 23.5 35.94 23.44 36.34L23.1 38.42C23 38.94 22.66 40.38 25.02 39.38C27.38 38.38 37.38 32.06 40 27.4C40 27.4 40 22.2 40 22.2Z" fill="white"/></svg>
+        LINEで相談してみる
+      </a>
+      <span class="cta-free">✔ 無理な入塾の勧誘はしません</span>
+      <span class="cta-note">保護者の方もお気軽にご相談ください</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="ft-name"><span>SC</span>アカデミー</p>
+  <p class="ft-info">新潟県新発田市 ｜ 中学生・高校生向け学習塾</p>
+</footer>
+
+<script>
+// week tabs
+function showWeek(n){
+  document.querySelectorAll('.week-tab').forEach((t,i)=>{t.classList.toggle('active',i===n)});
+  document.querySelectorAll('.week-panel').forEach((p,i)=>{p.classList.toggle('active',i===n)});
+}
+
+// checklist
+function toggleCheck(el){
+  const cb=el.querySelector('.cb');
+  const txt=el.querySelector('.cb-text');
+  const checked=cb.dataset.c==='1';
+  if(!checked){
+    cb.dataset.c='1';
+    cb.style.cssText='background:#c53020;border-color:#c53020;display:flex;align-items:center;justify-content:center';
+    cb.innerHTML='<svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4.5L4.5 8L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    txt.style.cssText='color:#aaa;text-decoration:line-through';
+  }else{
+    cb.dataset.c='0';
+    cb.style.cssText='';
+    cb.innerHTML='';
+    txt.style.cssText='';
+  }
+  updateCount();
+}
+
+function updateCount(){
+  const n=document.querySelectorAll('.cb[data-c="1"]').length;
+  document.getElementById('crCount').textContent=n;
+  const head=document.getElementById('crHead');
+  const sub=document.getElementById('crSub');
+  if(n===0){
+    head.textContent='チェックしてみましょう';
+    sub.textContent='1つ以上当てはまれば、やり方を変えるだけで点数は変わります。';
+  }else if(n<=2){
+    head.textContent='改善できる部分があります';
+    sub.textContent='当てはまった項目から順番に取り組んでみてください。';
+  }else if(n<=5){
+    head.textContent='点数を伸ばせる余地が十分あります';
+    sub.textContent='やり方を変えるだけで、かなり変わる可能性があります。まずは無料体験でご相談ください。';
+  }else{
+    head.textContent='今すぐ勉強のやり方を変えましょう';
+    sub.textContent='能力の問題ではありません。環境と仕組みを変えれば、点数は必ず動きます。SCアカデミーでご相談ください。';
+  }
+}
+
+// scroll animation
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
     }
+  });
+},{threshold:.08});
 
-    function nextPage() {
-      if (currentPage < totalPages) {
-        currentPage++;
-        updatePage();
-      }
-    }
-
-    function prevPage() {
-      if (currentPage > 1) {
-        currentPage--;
-        updatePage();
-      }
-    }
-
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const swipeThreshold = 50;
-
-    bookArea.addEventListener("touchstart", (e) => {
-      touchStartX = e.changedTouches[0].clientX;
-    }, { passive: true });
-
-    bookArea.addEventListener("touchend", (e) => {
-      touchEndX = e.changedTouches[0].clientX;
-      handleSwipe();
-    }, { passive: true });
-
-    function handleSwipe() {
-      const diff = touchEndX - touchStartX;
-
-      if (Math.abs(diff) < swipeThreshold) return;
-
-      if (diff < 0) {
-        nextPage();
-      } else {
-        prevPage();
-      }
-    }
-
-    updatePage();
-  </script>
+document.querySelectorAll(
+  '.mistake-card,.svc-item,.stumble-item,.subj-card,.score-tr,.step-item,.redo-step'
+).forEach(el=>{
+  el.style.cssText='opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease';
+  obs.observe(el);
+});
+</script>
 </body>
 </html>
