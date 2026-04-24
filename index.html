@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>受験戦略ガイド</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+        "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      text-align: center;
+    }
+
+    .viewer {
+      max-width: 700px;
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 12px 12px 24px;
+    }
+
+    .book-area {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #111;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+      touch-action: pan-y;
+    }
+
+    .book-area img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+
+    .page-info {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #ddd;
+      letter-spacing: 0.03em;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      appearance: none;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 18px;
+      min-width: 120px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      background: #ff7a00;
+      color: #fff;
+    }
+
+    button:disabled {
+      background: #555;
+      color: #aaa;
+      cursor: not-allowed;
+    }
+
+    .hint {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .swipe-indicator {
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      background: rgba(0,0,0,0.35);
+      padding: 6px 10px;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    @media (max-width: 480px) {
+      .viewer {
+        padding: 8px 8px 20px;
+      }
+
+      button {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="viewer">
+    <div class="book-area" id="bookArea">
+      <img id="pageImage" src="page1.png" alt="受験戦略ガイド 1ページ目" />
+      <div class="swipe-indicator">← スワイプでページ移動 →</div>
+    </div>
+
+    <div class="page-info" id="pageInfo">1 / 10</div>
+
+    <div class="controls">
+      <button id="prevBtn" onclick="prevPage()">← 前へ</button>
+      <button id="nextBtn" onclick="nextPage()">次へ →</button>
+    </div>
+
+    <div class="hint">スマホでは左右スワイプでもページを切り替えられます</div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 10;
+
+    const pageImage = document.getElementById("pageImage");
+    const pageInfo = document.getElementById("pageInfo");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const bookArea = document.getElementById("bookArea");
+
+    function updatePage() {
+      pageImage.src = `page${currentPage}.png`;
+      pageImage.alt = `受験戦略ガイド ${currentPage}ページ目`;
+      pageInfo.textContent = `${currentPage} / ${totalPages}`;
+
+      prevBtn.disabled = currentPage === 1;
+      nextBtn.disabled = currentPage === totalPages;
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        updatePage();
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        updatePage();
+      }
+    }
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50;
+
+    bookArea.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+
+    bookArea.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].clientX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchEndX - touchStartX;
+
+      if (Math.abs(diff) < swipeThreshold) return;
+
+      if (diff < 0) {
+        nextPage();
+      } else {
+        prevPage();
+      }
+    }
+
+    updatePage();
+  </script>
+</body>
+</html>
